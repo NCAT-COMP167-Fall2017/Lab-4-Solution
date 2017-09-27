@@ -55,7 +55,7 @@ public class FXMLDocumentController implements Initializable {
       
     @FXML
     private void handleLoadAction(ActionEvent event) {
-        contacts.loadContacts("records.txt");
+        contacts.loadContacts("contacts.txt");
         lblName.setText(contacts.getListName());
         
         ObservableList<String> items = FXCollections.observableArrayList();
