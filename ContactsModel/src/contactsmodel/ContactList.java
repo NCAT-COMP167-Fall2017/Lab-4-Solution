@@ -17,12 +17,12 @@ import java.util.Scanner;
  */
 public class ContactList {
     
-    private String listname;
+    private String listName;
     private ArrayList<Client> contacts;
     
     public ContactList(){
         
-        listname = "";
+        listName = "";
         contacts = new ArrayList<>();
     
     }
@@ -30,15 +30,15 @@ public class ContactList {
     /**
      * @return the listname
      */
-    public String getListname() {
-        return listname;
+    public String getListName() {
+        return listName;
     }
 
     /**
      * @param listname the listname to set
      */
-    public void setListname(String listname) {
-        this.listname = listname;
+    public void setListName(String listname) {
+        this.listName = listname;
     }
     
     public Client getContact (int index){
@@ -60,7 +60,7 @@ public class ContactList {
     public void loadContacts(String filename){
         try{
             Scanner read = new Scanner(new File(filename));
-            listname = read.nextLine();
+            listName = read.nextLine();
             while(read.hasNext()){
                 String[] info = read.nextLine().split(",");
                 Client client = new Client(info[0], info[1], info[2], Integer.parseInt(info[3]), info[4], info[5]);
@@ -92,7 +92,7 @@ public class ContactList {
             s += contacts.get(i) + System.lineSeparator();
         }
         
-        return listname + System.lineSeparator() + s;
+        return listName + System.lineSeparator() + s;
     }
     
 }
